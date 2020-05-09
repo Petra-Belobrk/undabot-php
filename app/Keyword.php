@@ -18,6 +18,8 @@ class Keyword extends Model
         return $this->belongsTo('App\Provider', 'providerId', 'id');
     }
 
+
+    //method to calculate score
     public function score() {
         return round($this->rocks / $this->count_all, 2);
     }

@@ -11,7 +11,4 @@ class Provider extends Model
         'name'
     ];
 
-//    public function keywords() {
-//        return $this->hasMany('App\Keyword');
-//    }
 }

@@ -105,7 +105,6 @@ class SearchController extends Controller
 
     public function search(Request $request) {
         $input = $request->all();
-//        var_dump($input);
         $search = $input['search'];
             $providersId = $input['provider'];
             //checking db for existing terms
@@ -152,10 +151,9 @@ class SearchController extends Controller
 
     }
 
+    //method for second version of returned json format
+
     public function apiV2($keyword) {
-
-//        $keyword = $data[0];
-
 
        echo response()->json([
            'links' => [
