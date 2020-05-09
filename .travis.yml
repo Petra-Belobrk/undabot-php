@@ -1,18 +1,19 @@
-dist: bionic
 language: php
+dist: bionic
+
 php:
-  - 7.2.5
+- 7.2.5
+
 services:
-  - mysql
-cache:
-  directories:
-    - node_modules
-    - vendor
+- mysql
+
 before_script:
-  - cp .env.travis .env
-  - sudo mysql -e 'create database homestead;'
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
-  - php artisan key:generate
-  - php artisan migrate
-script:  - vendor/bin/phpunit
+- cp .env.travis .env
+- mysql -e 'create database homestead_test;'
+- composer self-update
+- composer install --no-interaction
+- php artisan key:generate
+- php artisan migrate
+
+script:
+- vendor/bin/phpunit
